@@ -26,14 +26,26 @@ const Navbar = () => {
                     <Link to="/">
                         <Image src={Logo} />
                     </Link>
-                    <Text>Collections</Text>
+                    <Text
+                        transition="all 0.2s ease-in-out"
+                        _hover={{ color: 'primary.500' }}
+                        cursor="pointer"
+                    >
+                        Collections
+                    </Text>
                     <NavLink
                         to="/men"
                         className={({ isActive }) =>
                             isActive ? 'active' : 'inactive'
                         }
                     >
-                        <Text>Men</Text>
+                        <Text
+                            transition="all 0.2s ease-in-out"
+                            _hover={{ color: 'primary.500' }}
+                            cursor="pointer"
+                        >
+                            Men
+                        </Text>
                     </NavLink>
                     <NavLink
                         to="/women"
@@ -41,10 +53,32 @@ const Navbar = () => {
                             isActive ? 'active' : 'inactive'
                         }
                     >
-                        <Text>Women</Text>
+                        <Text
+                            transition="all 0.2s ease-in-out"
+                            _hover={{ color: 'primary.500' }}
+                            _focus={{
+                                color: 'primary.500',
+                                fontWeight: '700',
+                            }}
+                            cursor="pointer"
+                        >
+                            Woman
+                        </Text>
                     </NavLink>
-                    <Text>About</Text>
-                    <Text>Contact</Text>
+                    <Text
+                        transition="all 0.2s ease-in-out"
+                        _hover={{ color: 'primary.500' }}
+                        cursor="pointer"
+                    >
+                        About
+                    </Text>
+                    <Text
+                        transition="all 0.2s ease-in-out"
+                        _hover={{ color: 'primary.500' }}
+                        cursor="pointer"
+                    >
+                        Contact
+                    </Text>
                 </Stack>
                 <Stack direction="row" alignItems="center" spacing={6}>
                     <Stack direction="row" alignItems="center">
@@ -54,7 +88,7 @@ const Navbar = () => {
                             borderRadius="100%"
                             paddingX={2}
                         >
-                            <Text fontWeight="700" color="primary">
+                            <Text fontWeight="700" color="primary.500">
                                 {totalUnidades() === 0 ? null : totalUnidades()}
                             </Text>
                         </Stack>

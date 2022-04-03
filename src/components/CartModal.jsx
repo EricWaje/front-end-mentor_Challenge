@@ -24,17 +24,20 @@ const CartModal = ({ onClose, isOpen }) => {
             <Modal isOpen={isOpen} onClose={onClose} isCentered size="xl">
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader>Your cart is empty</ModalHeader>
+                    <ModalHeader>Your cart is empty 😢</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody></ModalBody>
                     <ModalFooter>
                         <Button
-                            bg="primary"
+                            bg="primary.500"
                             color="white"
                             mr={3}
                             onClick={onClose}
-                            _hover={{ bg: 'black', color: 'primary' }}
-                            _active={{ bg: 'black', color: 'primary' }}
+                            _hover={{ bg: 'primary.100', color: 'primary.500' }}
+                            _active={{
+                                bg: 'primary.100',
+                                color: 'primary.500',
+                            }}
                         >
                             Close
                         </Button>
@@ -60,7 +63,8 @@ const CartModal = ({ onClose, isOpen }) => {
                                 <Stack direction="row" flex="1">
                                     <Button
                                         size="xs"
-                                        color="primary"
+                                        color="primary.500"
+                                        bg="secondary"
                                         fontWeigh="700"
                                         fontSize={20}
                                         onClick={() => substractCount(prod.id)}
@@ -70,7 +74,8 @@ const CartModal = ({ onClose, isOpen }) => {
                                     </Button>
                                     <Button
                                         size="xs"
-                                        color="primary"
+                                        color="primary.500"
+                                        bg="secondary"
                                         fontWeight="700"
                                         fontSize={20}
                                         onClick={() => addCount(prod.id)}
@@ -83,7 +88,7 @@ const CartModal = ({ onClose, isOpen }) => {
                                     </Text>
                                     <Text fontSize={20}>$ {prod.price}.- </Text>
                                     <Text
-                                        color="primary"
+                                        color="primary.400"
                                         fontWeight="700"
                                         fontSize={19}
                                     >
@@ -123,12 +128,18 @@ const CartModal = ({ onClose, isOpen }) => {
                                 Total: ${totalCart()}
                             </Text>
                             <Button
-                                bg="primary"
+                                bg="primary.500"
                                 color="white"
                                 mr={3}
                                 onClick={onClose}
-                                _hover={{ bg: 'black', color: 'primary' }}
-                                _active={{ bg: 'black', color: 'primary' }}
+                                _hover={{
+                                    bg: 'primary.100',
+                                    color: 'primary.500',
+                                }}
+                                _active={{
+                                    bg: 'primary.100',
+                                    color: 'primary.500',
+                                }}
                             >
                                 Close
                             </Button>

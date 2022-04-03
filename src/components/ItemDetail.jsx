@@ -83,7 +83,7 @@ const ItemDetail = () => {
                         borderRadius={8}
                     />
                 </Stack>
-                <Stack direction="row" justifyContent="space-evenly">
+                <Stack direction="row" justifyContent="space-around">
                     {images.map((image) => (
                         <MotionImage
                             cursor="pointer"
@@ -101,7 +101,7 @@ const ItemDetail = () => {
             </Stack>
             <Stack paddingX={9}>
                 <Stack height="400px" justifyContent="space-around">
-                    <Text fontSize={17} color="primary" fontWeight="700">
+                    <Text fontSize={17} color="primary.500" fontWeight="700">
                         SNEAKER COMPANY
                     </Text>
                     <Heading fontSize={60}>
@@ -117,8 +117,8 @@ const ItemDetail = () => {
                             $125.00
                         </Text>
                         <Badge
-                            bg="secondary"
-                            color="primary"
+                            bg="primary.100"
+                            color="primary.500"
                             fontWeight="700"
                             fontSize={16}
                         >

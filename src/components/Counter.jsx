@@ -22,7 +22,7 @@ const Counter = ({ stock, addItem }) => {
             maxWidth="100%"
         >
             <Stack
-                bg="darkBlue"
+                bg="secondary"
                 direction="row"
                 alignItems="center"
                 borderRadius={8}
@@ -30,10 +30,12 @@ const Counter = ({ stock, addItem }) => {
                 <MotionButton
                     onClick={substract}
                     variant="ghost"
-                    color="primary"
+                    color="primary.500"
                     fontWeight="700"
                     fontSize={27}
                     whileTap={{ scale: 1.2 }}
+                    _hover={{ bg: 'primary.100' }}
+                    _active={{ bg: 'primary.100' }}
                 >
                     -
                 </MotionButton>
@@ -48,22 +50,24 @@ const Counter = ({ stock, addItem }) => {
                 <MotionButton
                     onClick={add}
                     variant="ghost"
-                    color="primary"
+                    color="primary.500"
                     fontWeight="700"
                     fontSize={27}
                     whileTap={{ scale: 1.2 }}
+                    _hover={{ bg: 'primary.100' }}
+                    _active={{ bg: 'primary.100' }}
                 >
                     +
                 </MotionButton>
             </Stack>
             <Stack flex="1" borderRadius={8}>
                 <MotionButton
-                    bg="primary"
+                    bg="primary.500"
                     color="white"
                     size="md"
                     fontSize={18}
-                    _hover={{ bg: 'black', color: 'primary' }}
-                    _active={{ bg: 'black', color: 'primary' }}
+                    _hover={{ bg: 'primary.100', color: 'primary.500' }}
+                    _active={{ bg: 'primary.100', color: 'primary.500' }}
                     onClick={() => addItem(count)}
                 >
                     Add to cart

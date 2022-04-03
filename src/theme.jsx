@@ -5,12 +5,18 @@ export default extendTheme({
         initialColorMode: 'light',
     },
     colors: {
-        primary: '#ff7d1a',
-        secondary: '#ffede0',
-        darkBlue: '#eaeaea',
+        primary: {
+            500: '#ff7d1a',
+            400: '#ff7d1ae1',
+            300: '#ff7d1ac0',
+            200: '#ff7d1a8d',
+            100: '#ff7d1a38',
+        },
+        secondary: '#EDF2F7',
+        /*         darkBlue: '#eaeaea',
         grayBlue: '#68707d',
         white: '#ffffff',
-        black: '#000000',
+        black: '#000000', */
     },
     fonts: {
         body: 'Kumbh Sans, sans-serif',
