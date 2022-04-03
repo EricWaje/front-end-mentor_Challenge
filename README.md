@@ -2,4 +2,6 @@
 
 ![Video](public/fem.gif)
 
-### Challenge realizado con React y Chakra UI
+[Demo]('https://front-end-mentor-challenge-ivory.vercel.app/')
+
+### Challenge realizado con React y Chakra UI, deployado en Vercel
