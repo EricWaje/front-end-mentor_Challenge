@@ -1,15 +1,18 @@
 import React, { useContext } from 'react';
-import { Divider, Image, Stack, Text } from '@chakra-ui/react';
+import { Divider, Image, Stack, Text, useDisclosure } from '@chakra-ui/react';
 
 import Logo from '../assets/logo.svg';
 import Avatar from '../assets/avatar.png';
 import Cart from '../assets/cart.svg';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import { CartContext } from '../context/CartContext';
+import CartModal from './CartModal';
 
 const Navbar = () => {
     const { totalUnidades } = useContext(CartContext);
+
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
         <Stack>
@@ -20,7 +23,9 @@ const Navbar = () => {
                 paddingY={7}
             >
                 <Stack direction="row" alignItems="center" spacing={9}>
-                    <Image src={Logo} />
+                    <Link to="/">
+                        <Image src={Logo} />
+                    </Link>
                     <Text>Collections</Text>
                     <NavLink
                         to="/men"
@@ -50,10 +55,17 @@ const Navbar = () => {
                             paddingX={2}
                         >
                             <Text fontWeight="700" color="primary">
-                                {totalUnidades()}
+                                {totalUnidades() === 0 ? null : totalUnidades()}
                             </Text>
                         </Stack>
-                        <Image cursor="pointer" src={Cart} w={5} h={5} />
+                        <Image
+                            cursor="pointer"
+                            src={Cart}
+                            w={5}
+                            h={5}
+                            onClick={onOpen}
+                        />
+                        <CartModal onClose={onClose} isOpen={isOpen} />
                     </Stack>
                     <Image
                         boxShadow="0px 0px 8px 1px #ff7d1a"

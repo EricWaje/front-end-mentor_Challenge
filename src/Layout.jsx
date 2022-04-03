@@ -10,6 +10,7 @@ const Layout = () => {
         <Container maxWidth="container.xl">
             <Navbar />
             <Routes>
+                <Route path="/" element={<ItemDetail />} />
                 <Route path="/women" element={<ItemDetail />} />
                 <Route path="/men" element={<ItemDetail />} />
             </Routes>

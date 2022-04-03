@@ -39,6 +39,7 @@ const product = {
     name: 'Fall Limited Edition Sneakers',
     price: 125.0,
     img: images,
+    stock: 5,
 };
 
 const ItemDetail = () => {
@@ -75,18 +76,12 @@ const ItemDetail = () => {
         >
             <Stack paddingX={9}>
                 <Stack>
-                    <AnimatePresence>
-                        <MotionImage
-                            src={img}
-                            alt="item"
-                            w={700}
-                            borderRadius={8}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.4 }}
-                        />
-                    </AnimatePresence>
+                    <MotionImage
+                        src={img}
+                        alt="item"
+                        w={700}
+                        borderRadius={8}
+                    />
                 </Stack>
                 <Stack direction="row" justifyContent="space-evenly">
                     {images.map((image) => (
@@ -139,7 +134,7 @@ const ItemDetail = () => {
                     </Text>
                 </Stack>
                 <Stack>
-                    <Counter stock={5} addItem={addItem} />
+                    <Counter stock={product.stock} addItem={addItem} />
                 </Stack>
             </Stack>
         </Stack>
