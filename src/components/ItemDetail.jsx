@@ -45,6 +45,7 @@ const product = {
 const ItemDetail = () => {
     const { addToCart } = useContext(CartContext);
     const [img, setImg] = useState(Uno);
+    const [select, setSelect] = useState(false);
 
     const MotionImage = motion(Image);
 
@@ -54,6 +55,7 @@ const ItemDetail = () => {
 
     const hanldeClick = (e) => {
         const { name } = e.target;
+        //console.log(e.target);
         switch (name) {
             case 'uno':
                 return setImg(Uno);

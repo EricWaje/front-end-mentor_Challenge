@@ -36,6 +36,7 @@ const Counter = ({ stock, addItem }) => {
                     whileTap={{ scale: 1.2 }}
                     _hover={{ bg: 'primary.100' }}
                     _active={{ bg: 'primary.100' }}
+                    _focus={{ outline: 'none' }}
                 >
                     -
                 </MotionButton>
@@ -56,6 +57,7 @@ const Counter = ({ stock, addItem }) => {
                     whileTap={{ scale: 1.2 }}
                     _hover={{ bg: 'primary.100' }}
                     _active={{ bg: 'primary.100' }}
+                    _focus={{ outline: 'none' }}
                 >
                     +
                 </MotionButton>
@@ -69,6 +71,7 @@ const Counter = ({ stock, addItem }) => {
                     _hover={{ bg: 'primary.100', color: 'primary.500' }}
                     _active={{ bg: 'primary.100', color: 'primary.500' }}
                     onClick={() => addItem(count)}
+                    _focus={{ outline: 'none' }}
                 >
                     Add to cart
                 </MotionButton>

@@ -65,10 +65,11 @@ const CartModal = ({ onClose, isOpen }) => {
                                         size="xs"
                                         color="primary.500"
                                         bg="secondary"
-                                        fontWeigh="700"
+                                        fontWeight="700"
                                         fontSize={20}
                                         onClick={() => substractCount(prod.id)}
                                         disabled={prod.cantidad === 1}
+                                        _focus={{ outline: 'none' }}
                                     >
                                         -
                                     </Button>
@@ -80,6 +81,7 @@ const CartModal = ({ onClose, isOpen }) => {
                                         fontSize={20}
                                         onClick={() => addCount(prod.id)}
                                         disabled={prod.cantidad === prod.stock}
+                                        _focus={{ outline: 'none' }}
                                     >
                                         +
                                     </Button>
@@ -110,6 +112,7 @@ const CartModal = ({ onClose, isOpen }) => {
                                         color: 'red.500',
                                     }}
                                     fontSize={15}
+                                    _focus={{ outline: 'none' }}
                                 >
                                     X
                                 </Button>
@@ -140,6 +143,7 @@ const CartModal = ({ onClose, isOpen }) => {
                                     bg: 'primary.100',
                                     color: 'primary.500',
                                 }}
+                                _focus={{ outline: 'none' }}
                             >
                                 Close
                             </Button>
