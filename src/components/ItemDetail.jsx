@@ -45,13 +45,17 @@ const product = {
 const ItemDetail = () => {
     const { addToCart } = useContext(CartContext);
     const [img, setImg] = useState(Uno);
-    const [select, setSelect] = useState(false);
+    //const [select, setSelect] = useState(false);
 
     const MotionImage = motion(Image);
 
     const addItem = (cantidad) => {
         addToCart(product, cantidad);
     };
+
+    /*     const addItem = useCallback((cantidad) => {
+        addToCart(product, cantidad);
+    }, []); */
 
     const hanldeClick = (e) => {
         const { name } = e.target;
@@ -78,12 +82,18 @@ const ItemDetail = () => {
         >
             <Stack paddingX={9}>
                 <Stack>
-                    <MotionImage
-                        src={img}
-                        alt="item"
-                        w={700}
-                        borderRadius={8}
-                    />
+                    <AnimatePresence>
+                        <MotionImage
+                            src={img}
+                            alt="item"
+                            w={700}
+                            borderRadius={8}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.8 }}
+                        />
+                    </AnimatePresence>
                 </Stack>
                 <Stack direction="row" justifyContent="space-around">
                     {images.map((image) => (
@@ -142,5 +152,9 @@ const ItemDetail = () => {
         </Stack>
     );
 };
+
+/* const memoDetail = React.memo(ItemDetail);
+
+export default memoDetail; */
 
 export default ItemDetail;
