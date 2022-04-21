@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Stack, Text } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
-const Counter = ({ stock, addItem }) => {
+import { CartContext } from '../context/CartContext';
+
+const Counter = ({ stock, product }) => {
     const [count, setCount] = React.useState(1);
+    const { addToCart } = useContext(CartContext);
 
     const MotionButton = motion(Button);
 
@@ -70,7 +73,7 @@ const Counter = ({ stock, addItem }) => {
                     fontSize={18}
                     _hover={{ bg: 'primary.100', color: 'primary.500' }}
                     _active={{ bg: 'primary.100', color: 'primary.500' }}
-                    onClick={() => addItem(count)}
+                    onClick={() => addToCart(product, count)}
                     _focus={{ outline: 'none' }}
                 >
                     Add to cart

@@ -1,5 +1,5 @@
+import React, { useState } from 'react';
 import { Badge, Heading, Image, Stack, Text } from '@chakra-ui/react';
-import React, { useContext, useState, useCallback } from 'react';
 
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -9,7 +9,6 @@ import Uno from '../assets/Uno.jpg';
 import Dos from '../assets/Dos.jpg';
 import Tres from '../assets/Tres.jpg';
 import Cuatro from '../assets/Cuatro.jpg';
-import { CartContext } from '../context/CartContext';
 
 const images = [
     {
@@ -43,35 +42,13 @@ const product = {
 };
 
 const ItemDetail = () => {
-    const { addToCart } = useContext(CartContext);
     const [img, setImg] = useState(Uno);
-    //const [select, setSelect] = useState(false);
 
     const MotionImage = motion(Image);
 
-    const addItem = (cantidad) => {
-        addToCart(product, cantidad);
-    };
-
-    /*     const addItem = useCallback((cantidad) => {
-        addToCart(product, cantidad);
-    }, []); */
-
     const hanldeClick = (e) => {
-        const { name } = e.target;
-        //console.log(e.target);
-        switch (name) {
-            case 'uno':
-                return setImg(Uno);
-            case 'dos':
-                return setImg(Dos);
-            case 'tres':
-                return setImg(Tres);
-            case 'cuatro':
-                return setImg(Cuatro);
-            default:
-                break;
-        }
+        const selected = e.target.src;
+        setImg(selected);
     };
     return (
         <Stack
@@ -91,7 +68,7 @@ const ItemDetail = () => {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            transition={{ duration: 0.8 }}
+                            transition={{ duration: 0.3 }}
                         />
                     </AnimatePresence>
                 </Stack>
@@ -146,15 +123,28 @@ const ItemDetail = () => {
                     </Text>
                 </Stack>
                 <Stack>
-                    <Counter stock={product.stock} addItem={addItem} />
+                    <Counter stock={product.stock} product={product} />
                 </Stack>
             </Stack>
         </Stack>
     );
 };
 
-/* const memoDetail = React.memo(ItemDetail);
-
-export default memoDetail; */
-
 export default ItemDetail;
+
+/* switch (name) {
+    case 'uno':
+        setImg(Uno);
+        break;
+    case 'dos':
+        setImg(Dos);
+        break;
+    case 'tres':
+        setImg(Tres);
+        break;
+    case 'cuatro':
+        setImg(Cuatro);
+        break;
+    default:
+        break;
+} */
